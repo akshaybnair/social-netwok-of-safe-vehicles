@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css">
+  <link rel="stylesheet" href="./css/bootstrap.css">
+  <link rel="stylesheet" href="css/map.css">
+  <script src="./js/jquery.js"></script>
+  <script src="js/script.js"></script>
+  
+</head>
+
+<body>
+  
+  <nav class="navbar navbar-expand-md navbar-dark bg-dark" >
+    <div class="container"> <a class="navbar-brand" href="#">
+      <i class="fa d-inline fa-lg fa-car"></i>
+        <b> SOCIAL NETWORK OF SAFE VEHICLES</b>
+      </a> <button class="navbar-toggler navbar-toggler-right border-0" type="button" data-toggle="collapse" data-target="#navbar10">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbar10">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item"> <a class="nav-link" href="./map.html"> #navigation_console</a> </li>
+          
+        </ul> 
+      </div>
+    </div>
+  </nav>
+
+
+  <div id="map"></div>
+
+  <div class="py-5">
+    <div class="container" id="one">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="card text-center">
+            <div class="card-body">
+              <h1 class="card-title" id="loc">Select a Marker to vote</h1>
+              <hr>
+              <span id="rtype"></span>
+              <hr>
+              <button  id="upbtn" class="btn btn-success " onclick="up();"><i class="fa fa-2x fa-thumbs-up" aria-hidden="true"></i> <br/> <span class="count" id="up"></span></button>
+              
+              <button id="downbtn"  style="margin-left:30px;" class="btn btn-danger" onclick="down()"><i class="fa fa-2x fa-thumbs-down" aria-hidden="true"></i> <br/><span class="count" id="down"></span>
+                
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="py-5 text-center"  >
+    <div class="container">
+      <div class="row">
+        <div class="mx-auto col-lg-12 ">
+          <h1>Add a new Pothole</h1>
+          <hr>
+          <form class="text-left">
+            <h3> Pothole position</h3>
+            <div class="form-row">
+              <div class="form-group col-md-5"> <input type="text" class="form-control" id="lat" placeholder="Latitude"> </div>
+              <div class="form-group col-md-5"> <input type="text" class="form-control" id="lng" placeholder="Longitude"> </div>
+              <div class="form-group col-md-2">
+                <a class="btn btn-primary" href="#map"> Select from map</a>
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group col-md-5">
+                <label for="roadtype">Select road type</label>
+                <select id="roadtype" class="form-control">
+                  <option value="" disabled="" selected="">Choose your option</option>
+                  <option value="pothole">Pothole</option>
+                  <option value="hump">Hump</option>
+                </select>
+              </div>
+              
+            </div>
+            <div class="form-row">
+              <div class="col-md-6">
+                <button type="button" onclick="addNew();" class="btn btn-primary">Submit</button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="https://maps.googleapis.com/maps/api/js?key=
+  AIzaSyCWZZQuk9nnyawgb5TE62N4KpqlkwFvd8E&callback=init" async defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+ 
+</body>
+
+</html>

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Navigation</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css">
+  <link rel="stylesheet" href="./css/bootstrap.css">
+  <link rel="stylesheet" href="./css/map.css">
+  <script src="./js/jquery.js"></script>
+  <script src="./js/map.js"></script>
+</head>
+
+<body>
+  
+  <nav class="navbar navbar-expand-md navbar-dark bg-dark" >
+    <div class="container"> <a class="navbar-brand" href="#">
+      <i class="fa d-inline fa-lg fa-car"></i>
+        <b> SOCIAL NETWORK OF SAFE VEHICLES</b>
+      </a> <button class="navbar-toggler navbar-toggler-right border-0" type="button" data-toggle="collapse" data-target="#navbar10">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbar10">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item"> <a class="nav-link" href="./index.html"> #social</a> </li>
+          
+        </ul> 
+      </div>
+    </div>
+  </nav>
+
+  <div id="map"></div>
+        
+  <div class="py-5 text-center" style="">
+    <div class="container">
+      <div class="row">
+        <div class="mx-auto col-lg-12 ">
+          <h1>Vehicle configuration details</h1>
+          <hr>
+          <form class="text-left">
+            <h3> Current vehicle position </h3>
+            <div class="form-row">
+              <div class="form-group col-md-6"> <input type="text" class="form-control" id="lat" placeholder="Latitude"> </div>
+              <div class="form-group col-md-6"> <input type="text" class="form-control" id="lng" placeholder="Longitude"> </div>
+            </div>
+            <hr>
+            <div class="row">
+              <div class="form-group col-10">
+                <label for="formControlRange">Select RPM of the Vehicle</label>
+                <input oninput="setVal(this.value)" onchange="setVal(this.value)"type="range" min="0" max="10000" class="form-control-range" id="rpm" value="0">
+              </div>
+              <div class="form-group col-2"> <input type="text" class="form-control" id="rpmip" disabled value="0"> </div>
+            </div>
+            <div class="row">
+              <div class="col-6">
+                <div class="form-group"> <label for="form16">Wheel Radius</label> <input type="text" class="form-control" id="radius" placeholder="Enter wheel Radius (mm)"> </div>
+                <div class="form-group"> <label for="form17">Wheel Base</label> <input type="text" class="form-control" id="bade" placeholder="Enter Wheel Base (mm)"> </div>
+                <div class="form-row">
+                  <div class="form-group col-md-6"> <label for="form19">Front</label> <input type="text" class="form-control" id="front" placeholder="Front"> </div>
+                  <div class="form-group col-md-6"><label for="form19">Rear</label> <input type="text" class="form-control" id="rear" placeholder="Rear"> </div>
+                </div>
+                <!-- <button type="submit" class="btn btn-primary">Sign in</button> -->
+              </div>
+              <div class="col-6">
+                <div class="form-group"> <label for="form18">Ground Clearance</label> <input type="text" class="form-control" id="gdclearance" placeholder="Enter Ground Clearance (mm)"> </div>
+                <div class="form-group"> <label for="form18">Turning Radius</label> <input type="text" class="form-control" id="turning_radius" placeholder="Enter turning radius (m)"> </div>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+  <div aria-live="polite" aria-atomic="true" style="position: absolute; top: 0; right: 0;min-height: 200px;">
+    <div class="toast" id="toast" data-delay="5000" >
+      <div class="toast-header">
+        <strong class="mr-auto" id="toast-header" ></strong>
+        <button type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="toast-body" id="toast-body">
+        
+      </div>
+    </div>
+  </div>
+
+  
+
+
+  <script src="https://maps.googleapis.com/maps/api/js?key=
+  AIzaSyCWZZQuk9nnyawgb5TE62N4KpqlkwFvd8E&callback=init" async defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</body>
+</html>
